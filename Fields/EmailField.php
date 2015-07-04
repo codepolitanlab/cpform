@@ -1,25 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-require_once APPPATH.'libraries/cpform/Fields/Base/BaseField.php';
+require_once APPPATH.'libraries/cpform/Fields/CharField.php';
 
-class EmailField extends BaseField {
-
-    public function render(){
-
-        $this->widget = '<input type="text"';
-        
-        foreach ($this->config as $key => $value) {
-            $attribute = $key.'="'.$value.'"';
-            $this->widget .= ' '.$attribute.' ';
-        }
-
-        $this->widget .= ' name="'.$this->name.'" ';        
-        $this->widget .= ' value="'.$this->initial.'" ';
-        $this->widget .= ' />';
-        
-        return $this->widget;
-    }
+class EmailField extends CharField {
 
     public function rules($str){
         if (function_exists('idn_to_ascii') && $atpos = strpos($str, '@'))
