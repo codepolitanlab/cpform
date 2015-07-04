@@ -19,7 +19,7 @@ class CPForm {
 			}
 			else {
 				require_once $this->cpform_path.'Fields/'.$value['fields'].'.php';
-				$temp_value = new $value['fields']($value['initial'], $value['config']);
+				$temp_value = new $value['fields']($key, $value['initial'], $value['config']);
 				$this->cpform_values[$key] = $temp_value;			
 			}
 			
@@ -28,7 +28,7 @@ class CPForm {
 		if ($_POST){
 			$form_data = [];
 			foreach ($_POST as $key => $value){
-				if (!empty($this->cpform_values[$key])){
+				if (! empty($this->cpform_values[$key])){
 					$form_data[$key] = $value; 
 				}
 			}

@@ -6,9 +6,11 @@ class CharField {
     protected $widget = '';
     protected $initial = '';
     protected $config = '';
+    protected $name = '';
 
-    public function __construct($initial='', $config=[])
+    public function __construct($name='', $initial='', $config=[])
     {
+        $this->name = $name;
         $this->initial = $initial;
         $this->config = $config;
 
@@ -22,6 +24,8 @@ class CharField {
             $attribute = $key.'="'.$value.'"';
             $this->widget .= ' '.$attribute.' ';
         }
+
+        $this->widget .= ' name="'.$this->name.'" ';        
         $this->widget .= ' value="'.$this->initial.'" ';
         $this->widget .= ' />';
         
