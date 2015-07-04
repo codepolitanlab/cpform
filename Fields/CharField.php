@@ -1,20 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class CharField {
+require_once APPPATH.'libraries/cpform/Fields/Base/BaseField.php';
 
-    protected $widget = '';
-    protected $initial = '';
-    protected $config = '';
-    protected $name = '';
-
-    public function __construct($name='', $initial='', $config=[])
-    {
-        $this->name = $name;
-        $this->initial = $initial;
-        $this->config = $config;
-
-    }
+class CharField extends BaseField {
 
     public function render(){
 
