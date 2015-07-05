@@ -1,0 +1,5 @@
+# Revisi
+
+- proses require_once lebih baik dipasang di CPForm, mudahkan user agar tidak melakukan require_once secara manual
+- isi atribute name lebih baik diambil dari nama property
+- tambah label untuk setiap field
