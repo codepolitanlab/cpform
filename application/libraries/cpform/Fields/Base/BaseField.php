@@ -15,4 +15,31 @@ class BaseField {
         $this->config = $config;
 
     }
+
+    public function max_length(){
+        if ( ! is_numeric($val))
+        {
+            return FALSE;
+        }
+
+        return ($val >= mb_strlen($str));
+    }
+
+    public function min_length(){
+        if ( ! is_numeric($val))
+        {
+            return FALSE;
+        }
+
+        return ($val <= mb_strlen($str));
+    }
+
+    public function match_length(){
+        if ( ! is_numeric($val))
+        {
+            return FALSE;
+        }
+
+        return (mb_strlen($str) === (int) $val);
+    }
 }
