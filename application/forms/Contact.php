@@ -15,6 +15,10 @@ class Contact extends CPForm {
                     'placeholder' => 'isi dengan name anda...',
                     'id' => 'name'
                 ],
+                'rules' => [
+                    'min_length' => 5,
+                    'max_length' => 10,
+                ]
             ];
 
         $this->first_name = [
@@ -24,6 +28,10 @@ class Contact extends CPForm {
                     'placeholder' => 'isi dengan first name anda...',
                     'id' => 'first_name'
                 ],
+                'rules' => [
+                    'min_length' => 5,
+                    'max_length' => 10,
+                ]
             ];    
 
         $this->last_name = [
@@ -33,8 +41,13 @@ class Contact extends CPForm {
                     'placeholder' => 'isi dengan last name anda...',
                     'id' => 'last_name'
                 ],
+                'rules' => [
+                    'min_length' => 5,
+                    'max_length' => 10,
+                ]
             ];    
 
+        
         $this->email = [
                 'fields' => 'EmailField',
                 'initial'=>'', 
@@ -42,6 +55,8 @@ class Contact extends CPForm {
                     'placeholder' => 'isi dengan e-mail anda...',
                     'id' => 'email'
                 ],
+                'rules' => [
+                ]
             ];    
             
         $this->website = [
@@ -51,7 +66,11 @@ class Contact extends CPForm {
                     'placeholder' => 'isi dengan website anda...',
                     'id' => 'website'
                 ],
-            ];       
+                'rules' => [
+                ]
+            ];     
+        
+
     }
 
 }

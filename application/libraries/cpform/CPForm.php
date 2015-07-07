@@ -13,13 +13,14 @@ class CPForm {
 		$this->cpform_path = APPPATH."libraries/cpform/";
 
 		foreach($this as $key => $value) {
+			// var_dump($value);
 			$is_user_attribute = !(strrpos($key,"cpform") === false);
 			
 			if ($is_user_attribute)  {
 			}
 			else {
 				require_once $this->cpform_path.'Fields/'.$value['fields'].'.php';
-				$temp_value = new $value['fields']($key, $value['initial'], $value['config']);
+				$temp_value = new $value['fields']($key, $value['initial'], $value['config'], $value['rules']);
 				$this->cpform_values[$key] = $temp_value;			
 			}
 			
@@ -46,7 +47,7 @@ class CPForm {
 		$valid = TRUE;
 
 		foreach ($form_data as $key => $value){
-			$valid = ($valid && $this->cpform_values[$key]->rules($value));
+			$valid = ( $valid && $this->cpform_values[$key]->rules( $value, $this->cpform_values[$key]->get_rules() ) );
 		}
 
 		$this->cpform_is_valid = $valid;

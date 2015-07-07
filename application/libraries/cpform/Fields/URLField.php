@@ -5,7 +5,7 @@ require_once APPPATH.'libraries/cpform/Fields/CharField.php';
 
 class URLField extends CharField {
 
-    public function rules($str){
+    public function rules($str, $opt_rules=[]){
         if (empty($str))
 		{
 			return FALSE;

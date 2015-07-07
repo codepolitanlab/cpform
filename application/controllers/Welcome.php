@@ -27,6 +27,12 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->library('cpform/CPFormUtil');
 		$contact_form = $this->cpformutil->load('Contact');
+		$contact_form->config([
+						'action' => 'http://localhost/cpform/index.php/welcome/contact',
+						'name' => 'contact-form',
+						'id' => 'contact-form',
+						'method' => 'POST',
+					]);
 		$contact_form->init();
 
 		if ($_POST) {
@@ -38,22 +44,15 @@ class Welcome extends CI_Controller {
 				echo "</pre>";
 			}
 			else {
+				$form = $contact_form->generate('paragraph');	
+				echo $form;
 				echo "Form gagal tervalidasi....";
 			}
 			
 		}
-
 		else {
-
-				$contact_form->config([
-						'action' => 'http://localhost/cpform/index.php/welcome/contact',
-						'name' => 'contact-form',
-						'id' => 'contact-form',
-						'method' => 'POST',
-					]);
-
-				$form = $contact_form->generate('paragraph');	
-				echo $form;
+			$form = $contact_form->generate('paragraph');	
+			echo $form;
 		}
 	
 	}
