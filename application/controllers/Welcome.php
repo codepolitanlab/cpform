@@ -34,7 +34,7 @@ class Welcome extends CI_Controller {
 						'method' => 'POST',
 					]);
 		$contact_form->init();
-
+		
 		if ($_POST) {
 
 			if ($contact_form->is_valid()){

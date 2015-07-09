@@ -70,6 +70,29 @@ class Contact extends CPForm {
                 ]
             ];     
         
+        $this->age = [
+                'fields' => 'NumberField',
+                'initial'=>'0', 
+                'config' => [
+                    'placeholder' => 'isi dengan age anda...',
+                    'id' => 'age'
+                ],
+                'rules' => [
+                    'less_than_equal' => 30,
+                ]
+            ];    
+
+        $this->salary = [
+                'fields' => 'NumberField',
+                'initial'=>'0', 
+                'config' => [
+                    'placeholder' => 'isi dengan salary anda...',
+                    'id' => 'salary'
+                ],
+                'rules' => [
+                    'greater_than_equal' => 10000,
+                ]
+            ];    
 
     }
 
