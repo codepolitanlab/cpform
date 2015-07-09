@@ -47,7 +47,7 @@ class CPForm {
 		$valid = TRUE;
 
 		foreach ($form_data as $key => $value){
-			$valid = ( $valid && $this->cpform_values[$key]->rules( $value, $this->cpform_values[$key]->get_rules() ) );
+			$valid = ( $valid && $this->cpform_values[$key]->check_validation_rules( $value, $this->cpform_values[$key]->get_rules() ) );
 		}
 
 		$this->cpform_is_valid = $valid;

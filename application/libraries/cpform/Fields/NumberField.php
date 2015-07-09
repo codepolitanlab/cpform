@@ -5,11 +5,9 @@ require_once APPPATH.'libraries/cpform/Fields/CharField.php';
 
 class NumberField extends CharField {
 
-    public function rules($str, $opt_rules=[]){
+    public function valid_num($str, $val=''){
 
-    	$is_valid = TRUE;
-        $is_valid = $this->check_validation_rules($str, $opt_rules) && $is_valid;
-        $is_valid = (ctype_digit($str) || (bool) preg_match('/^[0-9]+$/', $str)) && $is_valid;
+    	$is_valid = (ctype_digit($str) || (bool) preg_match('/^[0-9]+$/', $str));
 
         return $is_valid;
     }

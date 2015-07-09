@@ -18,6 +18,7 @@ class Contact extends CPForm {
                 'rules' => [
                     'min_length' => 5,
                     'max_length' => 10,
+                    'alpha' => '',
                 ]
             ];
 
@@ -31,6 +32,7 @@ class Contact extends CPForm {
                 'rules' => [
                     'min_length' => 5,
                     'max_length' => 10,
+                    'alpha' => '',
                 ]
             ];    
 
@@ -44,6 +46,7 @@ class Contact extends CPForm {
                 'rules' => [
                     'min_length' => 5,
                     'max_length' => 10,
+                    'alpha' => '',
                 ]
             ];    
 
@@ -56,6 +59,7 @@ class Contact extends CPForm {
                     'id' => 'email'
                 ],
                 'rules' => [
+                    'valid_email' => '',
                 ]
             ];    
             
@@ -67,6 +71,7 @@ class Contact extends CPForm {
                     'id' => 'website'
                 ],
                 'rules' => [
+                    'valid_url' => '',
                 ]
             ];     
         
@@ -78,6 +83,7 @@ class Contact extends CPForm {
                     'id' => 'age'
                 ],
                 'rules' => [
+                    'valid_num' => '',
                     'less_than_equal' => 30,
                 ]
             ];    
@@ -90,6 +96,7 @@ class Contact extends CPForm {
                     'id' => 'salary'
                 ],
                 'rules' => [
+                    'valid_num' => '',
                     'greater_than_equal' => 10000,
                 ]
             ];    

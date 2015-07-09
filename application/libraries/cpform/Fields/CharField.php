@@ -21,12 +21,9 @@ class CharField extends BaseField {
         return $this->widget;
     }
 
-    public function rules($str, $opt_rules=[]){
+    public function alpha($str, $val=''){
         
-        $is_valid = TRUE;
-        $is_valid = $this->check_validation_rules($str, $opt_rules) && $is_valid;
-
-        $is_valid = ( ctype_alpha($str) || (bool) preg_match('/^[a-zA-Z ]+$/', $str) ) && $is_valid;
+        $is_valid = ( ctype_alpha($str) || (bool) preg_match('/^[a-zA-Z ]+$/', $str) );
     	return $is_valid;
     }
 }

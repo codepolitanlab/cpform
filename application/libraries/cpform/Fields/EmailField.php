@@ -5,7 +5,7 @@ require_once APPPATH.'libraries/cpform/Fields/CharField.php';
 
 class EmailField extends CharField {
 
-    public function rules($str, $opt_rules=[]){
+    public function valid_email($str, $val=''){
         if (function_exists('idn_to_ascii') && $atpos = strpos($str, '@'))
         {
             $str = substr($str, 0, ++$atpos).idn_to_ascii(substr($str, $atpos));
